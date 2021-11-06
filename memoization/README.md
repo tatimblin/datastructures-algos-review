@@ -25,7 +25,7 @@ The fibonacci sequence is calculated by adding the result of two numbers by the 
 This recursive alogrithm can benefit greatly from memoization, exponentially so as numbers get bigger. By incorporating memoization in `fib()` calculating the fibonacci sequence of `6` was reduced from `40` executions to just `11`.
 
 ### Execution Tree
-
+```
                             fib(5)
                      /                   \
                     /                   fib(3)
@@ -37,6 +37,7 @@ This recursive alogrithm can benefit greatly from memoization, exponentially so 
     fib(2)  fib(1)  fib(1)  fib(0)
     /    \
 fib(1)  fib(0)
+```
 
 See how `fib(1)` is called 5 separate times, with memoization it is only run once and subsequent times its value is needed it can be looked up.
 
