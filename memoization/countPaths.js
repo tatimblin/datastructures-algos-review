@@ -30,8 +30,6 @@ const funcs = {
       paths[row][col] = this.countPaths(grid, row + 1, col, paths) + this.countPaths(grid, row, col + 1, paths);
     }
 
-    console.log({paths});
-
     return paths[row][col];
   },
   validSquare: function (grid, row, col) {
