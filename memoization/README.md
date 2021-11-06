@@ -14,11 +14,13 @@ The fibonacci sequence is calculated by adding the result of two numbers by the 
 
 ### For example:
 
+```
 1 + 1 = 2        8 + 13 = 21
 1 + 2 = 3       13 + 21 = 34
 2 + 3 = 5       21 + 34 = 55
 3 + 5 = 8       34 + 55 = 89
 5 + 8 = 13      55 + 89 = 144
+```
 
 This recursive alogrithm can benefit greatly from memoization, exponentially so as numbers get bigger. By incorporating memoization in `fib()` calculating the fibonacci sequence of `6` was reduced from `40` executions to just `11`.
 
