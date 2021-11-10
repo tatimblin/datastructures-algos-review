@@ -11,11 +11,15 @@ This repo is a collection of basic data structure and algorithm implementations.
 
 Node.js is required to run Javascript files in the terminal
 
-You can clone the repo and run `npm install` to add Jest, which is used to run the tests.
+You can clone the repo and run `npm install` to add Jest, which is used to run the tests. Once setup you can run any file directly to see it run with some related output, or just run the tests.
+
+`node ./path/to/file.js`
 
 ## Tests
 
 There are tests included for each algorithm to ensure the optimizations they provide are correctly implemented. For example in `fibonacci.test.js` there is a test checking how many times the function calls itself to ensure it properly uses memoization to not make the same calculation multiple times.
+
+`npm run test`
 
 ## Resources
 
