@@ -1,10 +1,11 @@
 class QuickSort {
   constructor(arr = []) {
-    this.increment = this.quickSort(arr, 0, arr.length - 1);
+    this.increment = this._cacheIncrement || this.quickSort(arr);
+    this._cacheIncrement = null;
   }
 
-  quickSort(arr, left, right, max = 0) {
-    if (left >= right || max === 5) return;
+  quickSort(arr, left = 0, right = arr.length - 1) {
+    if (left >= right) return;
 
     // get mid point of sub array
     const pivot = arr[Math.floor((left + right) / 2)];
@@ -12,6 +13,11 @@ class QuickSort {
 
     this.quickSort(arr, left, index - 1);
     this.quickSort(arr, index, right);
+
+    // cache result for future lookups
+    if (right === arr.length - 1) {
+      this._cacheIncrement = arr;
+    }
 
     return arr;
   }
@@ -40,7 +46,10 @@ class QuickSort {
   }
 }
 
-// const sorted = new QuickSort([2, 4, 16, 21, 3, 5, 23, 6, 55]);
+const sort = new QuickSort([1,2,5,24,52,13,11,7]);
+console.log(sort.increment);
+console.log('running again...');
+console.log(sort.increment);
 
 module.exports = {
   QuickSort,
