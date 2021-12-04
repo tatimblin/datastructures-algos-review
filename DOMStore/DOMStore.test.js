@@ -1,4 +1,4 @@
-const { DOMStore = TestDOMStore } = require('./DOMStore');
+const { DOMStore } = require('./DOMStore');
 
 test('DOMStore: get new key', () => {
   const store = new DOMStore();
