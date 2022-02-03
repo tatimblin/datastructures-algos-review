@@ -47,6 +47,18 @@ class BinaryTree {
 
     return newNode;
   }
+
+  contains(value: string | number, node: Node = this.root): boolean {
+    if (node === null) return false;
+
+    if (node.data > value) {
+      return this.contains(value, node.left);
+    } else if (node.data < value) {
+      return this.contains(value, node.right);
+    } else {
+      return true;
+    }
+  }
 }
 
 export {
