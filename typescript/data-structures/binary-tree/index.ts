@@ -59,6 +59,26 @@ class BinaryTree {
       return true;
     }
   }
+
+  remove (value: string | number, node: Node = this.root): boolean {
+    if (node === null) return false;
+
+    if (node.left && node.left.data === value) {
+      node.left = null;
+      return true;
+    }
+
+    if (node.right && node.right.data === value) {
+      node.right = null;
+      return true;
+    }
+
+    return this.remove(value, node.data > value ? node.left : node.right);
+  }
+
+  reset() {
+    this.root = null;
+  }
 }
 
 export {
