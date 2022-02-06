@@ -12,9 +12,11 @@ class Node {
 
 class BinaryTree {
   root: Node | null;
+  values?: string[] | number[];
 
-  constructor() {
+  constructor({ values = [] } = {}) {
     this.root = null;
+    if (values.length) this.populate(values);
   }
 
   insert(value: string | number): Node {
@@ -78,6 +80,10 @@ class BinaryTree {
 
   reset() {
     this.root = null;
+  }
+
+  populate(values: string[] | number[]) {
+    values.forEach(value => this.insert(value));
   }
 }
 

@@ -41,3 +41,11 @@ test('BinaryTree: reset tree', () => {
 
   expect(BT.root).toEqual(null);
 });
+
+test('BinaryTree: populate tree', () => {
+  const BT = new BinaryTree({
+    values: [1, 2, 3, 6, 7, 8],
+  });
+
+  expect(BT.contains(8)).toEqual(true);
+});
