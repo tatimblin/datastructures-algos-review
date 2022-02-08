@@ -16,7 +16,7 @@ test('BinarySearch: depth first search', () => {
 
   expect(BS.depthFirst(4)).toEqual({
     node: new BinaryTreeNode(4),
-    depth: 4
+    depth: 4,
   });
 });
 
@@ -27,6 +27,6 @@ test('BinarySearch: depth first search not found', () => {
 
   expect(BS.depthFirst(4)).toEqual({
     node: null,
-    depth: 4
+    depth: 3,
   });
 });

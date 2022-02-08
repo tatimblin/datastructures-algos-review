@@ -22,4 +22,10 @@ export class BinarySearch extends BinaryTree {
       depth
     };
   }
+
+  breadthFirst(key: string | number, node: BinaryTreeNode = this.root, depth: number = 0) {
+    if (node === null) return { node: null, depth };
+
+    return { node: null, depth }
+  }
 }
