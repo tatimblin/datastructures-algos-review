@@ -2,7 +2,7 @@ class Node {
   element: any;
   next: Node | null;
 
-  constructor(element) {
+  constructor(element = null) {
     this.element = element;
     this.next = null;
   }
@@ -85,6 +85,40 @@ class LinkedList {
 
       this.size -= 1;
     }
+  }
+
+  removeElement(element: any): Node {
+    let current = this.head;
+    let previous = null;
+
+    while (current !== null) {
+      if (current.element === element) {
+        if (previous === null) this.head = current.next;
+        else previous.next = current.next;
+
+        this.size -= 1;
+        return current;
+      }
+
+      previous = current;
+      current = current.next;
+    }
+
+    return new Node();
+  }
+
+  indexOf(element: any): number {
+    let current = this.head;
+    let iteration = 0;
+
+    while (current !== null) {
+      if (current.element === element) return iteration;
+
+      current = current.next;
+      iteration += 1;
+    }
+
+    return -1;
   }
 }
 
