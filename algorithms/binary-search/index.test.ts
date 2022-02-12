@@ -30,3 +30,25 @@ test('BinarySearch: depth first search not found', () => {
     depth: 3,
   });
 });
+
+test('BinarySearch: breadth first search', () => {
+  const BS = new BinarySearch({
+    values: [1, 2, 3, 7, 8, 9, 4],
+  });
+
+  expect(BS.breadthFirst(4)).toEqual({
+    node: new BinaryTreeNode(4),
+    depth: 4,
+  });
+});
+
+test('BinarySearch: breadth first search not found', () => {
+  const BS = new BinarySearch({
+    values: [1, 2, 3, 7, 8, 9],
+  });
+
+  expect(BS.breadthFirst(4)).toEqual({
+    node: null,
+    depth: 6,
+  });
+});
