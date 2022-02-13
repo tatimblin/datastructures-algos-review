@@ -1,25 +1,24 @@
-# Data Sructure and Algorithm Review
+# Data Sructure and Algorithms Review
 
-This repo is a collection of basic data structure and algorithm implementations. Its creation is intended to be my review of core computer science concepts. It is currently only implemented in Javascript, but I would like to take a second pass in another branch using Golang.
+This repo is a collection of common data structure and algorithm implementations. `/data-structures` are implemented as they're needed for some generic `/algorithms`, both are then later referenced in `/exercises` for real world implementations.
 
 ## Contents
 
-1. [Memoization](/memoization)
-2. [Trees](/trees)
+- [Data Structures](/data-structures)
+  1. [Binary Tree](/data-structures/binary-tree)
+  2. [Linked List](/data-structures/linked-list)
+  3. [Queue](/data-structures/queue)
+- [Algorithms](/algorithms)
+  1. [Binary Search](/algorithms/binary-search)
+- Exercises
 
 ## Usage
 
-Node.js is required to run Javascript files in the terminal
-
-You can clone the repo and run `npm install` to add Jest, which is used to run the tests. Once setup you can run any file directly to see it run with some related output, or just run the tests.
-
-`node ./path/to/file.js`
-
-## Tests
-
-There are tests included for each algorithm to ensure the optimizations they provide are correctly implemented. For example in `fibonacci.test.js` there is a test checking how many times the function calls itself to ensure it properly uses memoization to not make the same calculation multiple times.
-
-`npm run test`
+1. Clone this repo
+2. Install dependencies `npm install`
+3. Run tests
+  - Run all tests: `npx jest`
+  - Run tests in specific file: `npx jest ./algorithms/binary-search/index.test.ts`
 
 ## Resources
 
