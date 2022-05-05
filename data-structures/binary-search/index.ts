@@ -1,5 +1,5 @@
-import { BinaryTree, BinaryTreeNode } from '../../data-structures/binary-tree/index';
-import { Queue } from '../../data-structures/queue/index';
+import { BinaryTree, BinaryTreeNode } from '../binary-tree/index';
+import { Queue } from '../queue/index';
 
 interface BinarySearchResponse {
   node: BinaryTreeNode,

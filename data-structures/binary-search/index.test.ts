@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from '../../data-structures/binary-tree/index';
+import { BinaryTreeNode } from '../binary-tree/index';
 import { BinarySearch } from './index';
 
 test('BinarySearch: populate binary tree through extend', () => {
