@@ -9,7 +9,7 @@ This repo is a collection of common data structure and algorithm implementations
   * [Binary Tree](/data-structures/binary-tree)
   * [Linked List](/data-structures/linked-list)
   * [Queue](/data-structures/queue)
-  * [Stack] (/data-structures/stack)
+  * [Stack](/data-structures/stack)
 
 - Exercises
 
