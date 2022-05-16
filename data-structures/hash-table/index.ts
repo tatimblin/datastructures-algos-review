@@ -8,16 +8,18 @@ class HashTable {
     this.size = 0;
   }
 
-  set(key: string | number, value: any) {
+  set(key: string | number, value: any): number {
     const index = this.#hash(key);
 
     this.table[index] = [key, value];
     this.size++;
+
+    return index;
   }
 
   get(key: string | number): any {
     const index = this.#hash(key);
-    return this.table[index];
+    return this.table[index] && this.table[index][1];
   }
 
   remove(key: string | number) {
@@ -43,4 +45,8 @@ class HashTable {
 
     return hash % this.table.length;
   }
+}
+
+export {
+  HashTable,
 }
