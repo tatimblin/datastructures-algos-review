@@ -65,6 +65,21 @@ class LinkedList {
     }
   }
 
+  getFrom(index: number): any {
+    if (index < 0 || index > this.size) return console.warn('index out of bouds');
+    if (index === 0) return this.head.element;
+
+    let current = this.head;
+    let iteration = 0;
+
+    while (iteration < index) {
+      current = current.next;
+      iteration += 1;
+    }
+
+    return current?.element;
+  }
+
   removeFrom(index: number) {
     if (index < 0 || index > this.size) return console.warn('Index out of bounds');
     else {

@@ -1,9 +1,11 @@
-
+import { LinkedList } from '../linked-list';
 class HashTable {
+  keys: any[];
   table: any[];
   size: number;
 
   constructor() {
+    this.keys = new Array(127);
     this.table = new Array(127);
     this.size = 0;
   }
@@ -11,7 +13,20 @@ class HashTable {
   set(key: string | number, value: any): number {
     const index = this.#hash(key);
 
-    this.table[index] = [key, value];
+    if (!this.keys[index]) {
+      this.keys[index] = new LinkedList();
+      this.table[index] = new LinkedList();
+    }
+
+    const linkedListIndex = this.keys[index].indexOf(key);
+    if (linkedListIndex === -1) {
+      this.keys[index].add(key);
+      this.table[index].add(value);
+    } else {
+      this.keys[index].insertAt(key, linkedListIndex);
+      this.table[index].insertAt(value, linkedListIndex);
+    }
+
     this.size++;
 
     return index;
@@ -19,20 +34,19 @@ class HashTable {
 
   get(key: string | number): any {
     const index = this.#hash(key);
-    return this.table[index] && this.table[index][1];
+    if (!this.keys[index]?.size) return;
+    const linkedListIndex = this.keys[index].indexOf(key);
+    if (linkedListIndex === -1) return;
+
+    return this.table[index].getFrom(linkedListIndex);
   }
 
   remove(key: string | number) {
     const index = this.#hash(key);
-    let temp = undefined;
+    const linkedListIndex = this.keys[index].indexOf(key);
+    if (linkedListIndex === -1) return;
 
-    if (this.table[index] && this.table[index].length) {
-      temp = this.table[index];
-      this.table[index] = undefined;
-      this.size--;
-    }
-  
-    return temp;
+    return this.table[index].removeFrom(linkedListIndex);
   }
 
   #hash(key: string | number): number {
